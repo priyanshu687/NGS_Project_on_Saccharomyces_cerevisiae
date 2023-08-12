@@ -6,16 +6,16 @@ SECONDS=0
 cd /home/priyanshu/Saccharomyces_cerevisiae/
 
 # STEP 1: Run fastqc
-#fastqc ~/Saccharomyces_cerevisiae/data/SRR3396389_1.fastq.gz ~/Saccharomyces_cerevisiae/data/SRR3396389_2.fastq.gz -o data/fastq_result/
+fastqc ~/Saccharomyces_cerevisiae/data/SRR3396389_1.fastq.gz ~/Saccharomyces_cerevisiae/data/SRR3396389_2.fastq.gz -o data/fastq_result/
 
 
 # run trimmomatic to trim reads with poor quality
-#java -jar ~/software/Trimmomatic/dist/jar/trimmomatic-0.40-rc1.jar PE -threads 4 ~/Saccharomyces_cerevisiae/data/SRR3396389_1.fastq.gz ~/Saccharomyces_cerevisiae/data/SRR3396389_2.fastq.gz\
+java -jar ~/software/Trimmomatic/dist/jar/trimmomatic-0.40-rc1.jar PE -threads 4 ~/Saccharomyces_cerevisiae/data/SRR3396389_1.fastq.gz ~/Saccharomyces_cerevisiae/data/SRR3396389_2.fastq.gz\
     #~/Saccharomyces_cerevisiae/data/Trim_results/SRR3396389_1_trimmed.fastq ~/Saccharomyces_cerevisiae/data/Trim_results/SRR3396389_1_unpaired.fastq \
     #~/Saccharomyces_cerevisiae/data/Trim_results/SRR3396389_2_trimmed.fastq ~/Saccharomyces_cerevisiae/data/Trim_results/SRR3396389_2_unpaired.fastq \
     #TRAILING:10 MINLEN:50
 
-# fastqc ~/Saccharomyces_cerevisiae/data/Trim_results/SRR3396389_1_trimmed.fastq ~/Saccharomyces_cerevisiae/data/Trim_results/SRR3396389_2_trimmed.fastq -o data/Final/
+ fastqc ~/Saccharomyces_cerevisiae/data/Trim_results/SRR3396389_1_trimmed.fastq ~/Saccharomyces_cerevisiae/data/Trim_results/SRR3396389_2_trimmed.fastq -o data/Final/
 
 
 REF_GENOME="/home/priyanshu/Saccharomyces_cerevisiae/genome/Saccharomyces_cerevisiae.R64-1-1.dna.primary_assembly.fa"
@@ -26,10 +26,10 @@ results="/home/priyanshu/Saccharomyces_cerevisiae/results/SRR3396393"
 data="/home/priyanshu/Saccharomyces_cerevisiae/data"
 aligned_reads="/home/priyanshu/Saccharomyces_cerevisiae/aligned_reads"
 
-#bwa mem -t 4 $REF_GENOME $READS_1 $READS_2 > $results/SRR3396388.sam
+bwa mem -t 4 $REF_GENOME $READS_1 $READS_2 > $results/SRR3396388.sam
 
 # Convert SAM to BAM
-#samtools view -bS $results/SRR3396389.sam > $results/SRR3396388.bam
+samtools view -bS $results/SRR3396389.sam > $results/SRR3396388.bam
 
 # Sort the BAM file
 samtools sort $results/SRR3396393.bam -o $results/SRR3396393_sorted.bam
