@@ -20,6 +20,38 @@ Hypothesis: The project's hypothesis is that the combination of amphotericin B a
 Methods and Approach:
 
 Experimental Design: The project involves both in vitro and possibly in vivo experiments using Saccharomyces cerevisiae as a model organism.
+setup involving treatments with AMB (Amphotericin B) and LF (Lactoferrin), as well as corresponding controls. Here's a breakdown of the steps described in the protocol:
+
+Sample Preparation:
+
+RNAse zap treated 0.4 μm beads and lyophilized cells are used for sample homogenization.
+Bead beating is performed using a Minilys tissue homogenizer at 5,000 rpm for 2 minutes. Cooling on ice occurs at 1-minute intervals.
+RNA Isolation:
+
+Total RNA is isolated using the Qiagen total RNA mini isolation kit.
+RNA Quality Analysis:
+
+RNA quality is assessed using a Nanodrop spectrophotometer (Thermo Scientific) to ensure appropriate OD260/230 and OD260/280 ratios (between 1.8 and 2).
+RNA quality is further evaluated using an RNA Quality Indicator (RQI) measurement with a Bioanalyzer (Bio-Rad).
+RNA Concentration Measurement:
+
+RNA concentration is quantified using the Qubit BR RNA assay kit from Invitrogen.
+Library Preparation (AMB+LF Treatment and Controls):
+
+TruSeq RNA Library prep kit v2 (Illumina) is used for library preparation.
+2 μg of total RNA from each of the three biological triplicate samples is used as input.
+Libraries are enriched using 15 cycles of PCR.
+Insert sizes in the libraries range from 80 to 330 base pairs (bp).
+Libraries are randomized and sequenced in two separate lanes using HiSeq 2000 with TruSeq v3 SBS reagents to generate 100 bp paired-end reads.
+Demultiplexing of the data is performed using Casava 1.8.2.
+Library Preparation (LF Only Treatment and Controls):
+
+TruSeq Stranded mRNA-seq prep kit is used for library preparation.
+1 μg of total RNA from each of the three biological triplicate samples is used as input.
+Libraries are enriched using 12 cycles of PCR to minimize PCR duplicates.
+Libraries are multiplexed and sequenced on the same flow cell using NextSeq500 v2 reagents to generate 75 bp single reads.
+Demultiplexing of the data is performed using Casava 1.8.2.
+This protocol outlines the steps for RNA sample isolation, quality assessment, library preparation, and sequencing for two different treatments (AMB+LF and LF only) along with their corresponding controls. It provides important details for each step to ensure reproducibility and accuracy in the experimental process.
 
 NGS (Next-Generation Sequencing): NGS techniques, such as RNA-seq, may be used to analyze changes in gene expression profiles upon treatment with AMB, LF, and their combination. This can provide insights into the molecular pathways affected by the treatment.
 
